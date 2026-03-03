@@ -1,4 +1,4 @@
-# Dicts Sets — Personal Notes
+# Dictionaries and Sets — Personal Notes
 
 ## What clicked
 
@@ -10,7 +10,7 @@
 
 ## Connections
 
-<!-- How does this topic connect to something you already know? -->
+<!-- How does this connect to something you already know? -->
 
 ## Worth revisiting
 
