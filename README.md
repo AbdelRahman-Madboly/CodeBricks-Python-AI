@@ -1,7 +1,8 @@
 # CodeBricks · Python → AI/ML
 
-A structured, self-paced learning repository for going from Python fundamentals to production-ready AI/ML engineering.
-Built around the principle that understanding *why* code works matters more than memorizing *how* to write it.
+A structured, self-paced learning repository for going from Python fundamentals
+to production-ready AI/ML engineering. Built around the principle that
+understanding *why* code works matters more than memorizing *how* to write it.
 
 ---
 
@@ -11,25 +12,33 @@ Built around the principle that understanding *why* code works matters more than
 Phase 1 ──► Phase 2 ──► Phase 3 ──► Phase 4 ──► Phase 5 ──► Phase 6 ──► Phase 7 ──► Phase 8
 Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML       Projects
 3 weeks     2 weeks     1 week      1 week      1 week      2 weeks     4 weeks     2 weeks
+  ✅ Done
 ```
 
 ---
 
-### 🧱 Phase 1 — Python Fundamentals `(~3 weeks)`
+### 🧱 Phase 1 — Python Fundamentals `✅ Complete`
 > Build the mental model: how Python thinks, manages memory, and structures programs.
 
-- Printing, variables, data types, dynamic typing
-- Operators: arithmetic, relational, logical, membership
-- Control flow: selection, while loops, for loops
-- Functions: scope, closures, default args, `*args / **kwargs`
-- Classes and objects: constructors, `__str__`, methods
-- Memory and mutability: stack vs heap, identity vs equality
-- Data structures: lists, tuples, strings, dicts, sets
-- Modules and packages: import system, `__init__.py`, circular imports
-- Standard I/O: file read/write, pickle, shelve
-- Exceptions: handling, tracebacks, custom exceptions
-- Advanced functions: lambdas, annotations, nested functions
-- Recursion: base cases, call stack, tail recursion patterns
+| # | Topic | Status |
+|---|-------|--------|
+| 01 | [Printing](./01_basics/01_printing/) | ✅ |
+| 02 | [Variables and Data Types](./01_basics/02_variables_data_types/) | ✅ |
+| 03 | [Operators](./01_basics/03_operators/) | ✅ |
+| 04 | [Control Flow](./01_basics/04_control_flow/) | ✅ |
+| 05 | [Functions](./01_basics/05_functions/) | ✅ |
+| 06 | [Classes and Objects](./01_basics/06_classes_intro/) | ✅ |
+| 07 | [Memory and Mutability](./01_basics/07_memory_mutability/) | ✅ |
+| 08 | [Lists](./01_basics/08_lists/) | ✅ |
+| 09 | [Tuples](./01_basics/09_tuples/) | ✅ |
+| 10 | [Strings](./01_basics/10_strings/) | ✅ |
+| 11 | [Nested Lists](./01_basics/11_nested_lists/) | ✅ |
+| 12 | [Dictionaries and Sets](./01_basics/12_dicts_sets/) | ✅ |
+| 13 | [Modules and Packages](./01_basics/13_modules_packages/) | ✅ |
+| 14 | [File I/O](./01_basics/14_file_io/) | ✅ |
+| 15 | [Exceptions](./01_basics/15_exceptions/) | ✅ |
+| 16 | [Advanced Functions](./01_basics/16_advanced_functions/) | ✅ |
+| 17 | [Recursion](./01_basics/17_recursion/) | ✅ |
 
 ---
 
@@ -114,18 +123,11 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 CodeBricks-Python-AI/
 │
 ├── README.md
-├── LEARNING_PLAN.md          # 16-week week-by-week schedule
-├── PROGRESS.md               # Checklist — check off as you go
+├── LEARNING_PLAN.md
+├── PROGRESS.md
 │
-├── 01_basics/
-│   └── <topic>/
-│       ├── README.md         # Concept explanation and mental model
-│       ├── examples.py       # Clean, commented, real-world examples
-│       ├── exercises.py      # 3 exercises — attempt before looking at solutions
-│       ├── solutions.py      # Solutions — open only after attempting
-│       └── notes.md          # Personal notes
-│
-├── 02_oop/
+├── 01_basics/            ✅ complete — 17 topics
+├── 02_oop/               🔲 next
 ├── 03_pythonic/
 ├── 04_standard_library/
 ├── 05_typing_quality/
@@ -133,10 +135,19 @@ CodeBricks-Python-AI/
 ├── 07_ai_ml_path/
 ├── 08_projects/
 │
-└── notebooks/                # Jupyter notebooks per phase
+└── notebooks/
 ```
 
-Each topic follows the same structure so navigation is always predictable.
+Each topic folder contains:
+
+```
+<topic>/
+├── README.md      — concept, mental model, common mistakes, interview angle
+├── examples.py    — 3 clean real-world examples, fully commented
+├── exercises.py   — 3 exercises at increasing difficulty, no solutions
+├── solutions.py   — open only after attempting
+└── notes.md       — personal notes template
+```
 
 ---
 
@@ -144,7 +155,7 @@ Each topic follows the same structure so navigation is always predictable.
 
 **Think like an engineer, not a syntax memorizer.**
 
-- Understand the *why* before the *how* — a concept you understand at the design level transfers to any language
+- Understand the *why* before the *how* — a concept understood at the design level transfers to any language
 - Code review your own work as if you're the person who inherits it in six months
 - Connect every pattern to a real problem — if you can't describe the use case, you don't understand the tool
 - Difficult exercises are features, not obstacles — resistance is where the learning happens
@@ -157,7 +168,7 @@ Each topic follows the same structure so navigation is always predictable.
 ```bash
 git clone https://github.com/AbdelRahman-Madboly/CodeBricks-Python-AI.git
 cd CodeBricks-Python-AI
-python setup_repo.py      # creates all folders and template files locally
+python setup_repo.py
 ```
 
 Python 3.11+ recommended. No external dependencies required for phases 1–5.

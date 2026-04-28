@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Folders
+GetSkilled_Code/
+
 # C extensions
 *.so
 
