@@ -1,8 +1,10 @@
 # CodeBricks · Python → AI/ML
 
-A structured, self-paced learning repository for going from Python fundamentals
-to production-ready AI/ML engineering. Built around the principle that
-understanding *why* code works matters more than memorizing *how* to write it.
+A structured, self-documented learning repository for going from Python fundamentals
+to production-ready AI/ML engineering. Built around the principle that understanding
+*why* code works matters more than memorizing *how* to write it.
+
+**GitHub:** [AbdelRahman-Madboly/CodeBricks-Python-AI](https://github.com/AbdelRahman-Madboly/CodeBricks-Python-AI)
 
 ---
 
@@ -11,38 +13,40 @@ understanding *why* code works matters more than memorizing *how* to write it.
 ```
 Phase 1 ──► Phase 2 ──► Phase 3 ──► Phase 4 ──► Phase 5 ──► Phase 6 ──► Phase 7 ──► Phase 8
 Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML       Projects
-3 weeks     2 weeks     1 week      1 week      1 week      2 weeks     4 weeks     2 weeks
-  ✅ Done
+3 weeks     2 weeks     1 week      1 week      1 week      3 weeks     4 weeks     2 weeks
+🔲 Active
 ```
 
 ---
 
-### 🧱 Phase 1 — Python Fundamentals `✅ Complete`
+## Phase 1 — Python Fundamentals `🔲 In Progress`
+
 > Build the mental model: how Python thinks, manages memory, and structures programs.
 
-| # | Topic | Status |
-|---|-------|--------|
-| 01 | [Printing](./01_basics/01_printing/) | ✅ |
-| 02 | [Variables and Data Types](./01_basics/02_variables_data_types/) | ✅ |
-| 03 | [Operators](./01_basics/03_operators/) | ✅ |
-| 04 | [Control Flow](./01_basics/04_control_flow/) | ✅ |
-| 05 | [Functions](./01_basics/05_functions/) | ✅ |
-| 06 | [Classes and Objects](./01_basics/06_classes_intro/) | ✅ |
-| 07 | [Memory and Mutability](./01_basics/07_memory_mutability/) | ✅ |
-| 08 | [Lists](./01_basics/08_lists/) | ✅ |
-| 09 | [Tuples](./01_basics/09_tuples/) | ✅ |
-| 10 | [Strings](./01_basics/10_strings/) | ✅ |
-| 11 | [Nested Lists](./01_basics/11_nested_lists/) | ✅ |
-| 12 | [Dictionaries and Sets](./01_basics/12_dicts_sets/) | ✅ |
-| 13 | [Modules and Packages](./01_basics/13_modules_packages/) | ✅ |
-| 14 | [File I/O](./01_basics/14_file_io/) | ✅ |
-| 15 | [Exceptions](./01_basics/15_exceptions/) | ✅ |
-| 16 | [Advanced Functions](./01_basics/16_advanced_functions/) | ✅ |
-| 17 | [Recursion](./01_basics/17_recursion/) | ✅ |
+| # | Topic | Boot.dev | Status |
+|---|-------|----------|--------|
+| 01 | [Printing](./01_basics/01_printing/) | Ch 1 | ✅ Done |
+| 02 | [Variables and Data Types](./01_basics/02_variables_data_types/) | Ch 2 | ✅ Done |
+| 03 | [Operators](./01_basics/03_operators/) | Ch 6–7 | 🔲 |
+| 04 | [Control Flow](./01_basics/04_control_flow/) | Ch 8 | 🔲 |
+| 05 | [Functions](./01_basics/05_functions/) | Ch 3–4 | ✅ Done |
+| 06 | [Classes and Objects](./01_basics/06_classes_intro/) | — | 🔲 |
+| 07 | [Memory and Mutability](./01_basics/07_memory_mutability/) | — | 🔲 |
+| 08 | [Lists](./01_basics/08_lists/) | Ch 9 | 🔲 |
+| 09 | [Tuples](./01_basics/09_tuples/) | — | 🔲 |
+| 10 | [Strings](./01_basics/10_strings/) | — | 🔲 |
+| 11 | [Nested Lists](./01_basics/11_nested_lists/) | — | 🔲 |
+| 12 | [Dictionaries and Sets](./01_basics/12_dicts_sets/) | Ch 10–11 | 🔲 |
+| 13 | [Modules and Packages](./01_basics/13_modules_packages/) | — | 🔲 |
+| 14 | [File I/O](./01_basics/14_file_io/) | — | 🔲 |
+| 15 | [Exceptions](./01_basics/15_exceptions/) | Ch 12 | 🔲 |
+| 16 | [Advanced Functions](./01_basics/16_advanced_functions/) | — | 🔲 |
+| 17 | [Recursion](./01_basics/17_recursion/) | — | 🔲 |
 
 ---
 
-### 🔷 Phase 2 — Object-Oriented Programming `(~2 weeks)`
+## Phase 2 — Object-Oriented Programming `🔲 Not started`
+
 > Learn to model real systems, not just write classes for the sake of it.
 
 - Class internals: name mangling, `@property`, static vs class methods
@@ -54,17 +58,19 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 
 ---
 
-### ⚡ Phase 3 — Pythonic Patterns `(~1 week)`
+## Phase 3 — Pythonic Patterns `🔲 Not started`
+
 > Write code that experienced Python engineers actually respect.
 
 - Comprehensions: list, dict, set, generator expressions
 - Generators and `yield`: lazy evaluation, memory efficiency
 - Decorators: function wrappers, `functools`, parameterized decorators
-- Context managers: `with` statement, `__enter__ / __exit__`, `contextlib`
+- Context managers: `with` statement, `__enter__/__exit__`, `contextlib`
 
 ---
 
-### 📦 Phase 4 — Standard Library `(~1 week)`
+## Phase 4 — Standard Library `🔲 Not started`
+
 > Stop reinventing what Python already ships with.
 
 - `datetime` and `time`: parsing, formatting, timezones
@@ -75,7 +81,8 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 
 ---
 
-### ✅ Phase 5 — Code Quality `(~1 week)`
+## Phase 5 — Code Quality `🔲 Not started`
+
 > Write code you can maintain six months from now.
 
 - Type hints and `mypy`: annotating functions and data structures
@@ -85,7 +92,8 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 
 ---
 
-### 📊 Phase 6 — Data Science Foundation `(~2 weeks)`
+## Phase 6 — Data Science Foundation `🔲 Not started`
+
 > The bridge between Python engineering and AI/ML work.
 
 - `numpy`: vectorized operations, broadcasting, linear algebra
@@ -94,7 +102,8 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 
 ---
 
-### 🤖 Phase 7 — AI/ML Engineering `(~4 weeks)`
+## Phase 7 — AI/ML Engineering `🔲 Not started`
+
 > Go from toy examples to understanding what production ML actually looks like.
 
 - ML concepts: bias/variance, overfitting, cross-validation, metrics
@@ -102,11 +111,12 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 - Deep learning: neural network fundamentals, backpropagation
 - `PyTorch`: tensors, autograd, building and training networks
 - Transformers and `HuggingFace`: fine-tuning, inference, embeddings
-- Computer vision basics: image processing, CNNs, feature extraction
+- Computer vision: image processing, CNNs, feature extraction, deepfake detection
 
 ---
 
-### 🚀 Phase 8 — Projects `(~2 weeks)`
+## Phase 8 — Projects `🔲 Not started`
+
 > Ship things. Broken code in production teaches more than perfect code in a notebook.
 
 - CLI data pipeline with type-safe configuration
@@ -122,31 +132,40 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 ```
 CodeBricks-Python-AI/
 │
-├── README.md
-├── LEARNING_PLAN.md
-├── PROGRESS.md
+├── README.md            ← this file
+├── LEARNING_PLAN.md     ← 16-week schedule, Boot.dev chapter alignment
+├── PROGRESS.md          ← topic checklist
+├── SKILL.md             ← prompt for generating new topic folders in a new chat
+├── GIT_GUIDE.md         ← exact git commands for pushing each topic
 │
-├── 01_basics/            ✅ complete — 17 topics
-├── 02_oop/               🔲 next
+├── 01_basics/           ← 17 topics, in progress
+│   ├── README.md
+│   ├── 01_printing/     ✅
+│   ├── 02_variables_data_types/  ✅
+│   ├── 03_operators/
+│   ├── 04_control_flow/
+│   ├── 05_functions/    ✅
+│   └── ...
+│
+├── 02_oop/
 ├── 03_pythonic/
 ├── 04_standard_library/
 ├── 05_typing_quality/
 ├── 06_data_science/
 ├── 07_ai_ml_path/
-├── 08_projects/
-│
-└── notebooks/
+└── 08_projects/
 ```
 
 Each topic folder contains:
 
 ```
 <topic>/
-├── README.md      — concept, mental model, common mistakes, interview angle
-├── examples.py    — 3 clean real-world examples, fully commented
-├── exercises.py   — 3 exercises at increasing difficulty, no solutions
-├── solutions.py   — open only after attempting
-└── notes.md       — personal notes template
+├── README.md       — concept, mental model, AI connection, common mistakes
+├── notes.md        — personal learning journal
+├── test.py         — run with python test.py, no external dependencies
+├── examples/       — 3 AI-grounded examples, one file each
+├── exercises/      — 3 exercises at increasing difficulty, one file each
+└── solutions/      — solutions with "why this works" explanations
 ```
 
 ---
@@ -155,10 +174,13 @@ Each topic folder contains:
 
 **Think like an engineer, not a syntax memorizer.**
 
-- Understand the *why* before the *how* — a concept understood at the design level transfers to any language
+- Understand the *why* before the *how* — a concept understood at design level
+  transfers to any language or framework
+- Every example is grounded in AI/ML work — no abstract "calculate the area of a circle"
 - Code review your own work as if you're the person who inherits it in six months
-- Connect every pattern to a real problem — if you can't describe the use case, you don't understand the tool
-- Difficult exercises are features, not obstacles — resistance is where the learning happens
+- Connect every pattern to a real problem — if you can't describe the use case,
+  you don't fully understand the tool
+- Difficult exercises are features, not obstacles — resistance is where learning happens
 - Shipping imperfect code and fixing it beats studying perfect code and shipping nothing
 
 ---
@@ -168,14 +190,10 @@ Each topic folder contains:
 ```bash
 git clone https://github.com/AbdelRahman-Madboly/CodeBricks-Python-AI.git
 cd CodeBricks-Python-AI
-python setup_repo.py
 ```
 
-Python 3.11+ recommended. No external dependencies required for phases 1–5.
-
----
-
-## Progress
+Python 3.11+ recommended. No external dependencies for Phases 1–5.
 
 Track your progress in [`PROGRESS.md`](./PROGRESS.md).
-Suggested pace: one topic folder per day for phases 1–5, slower and more deliberate for phases 6–8.
+See the full schedule in [`LEARNING_PLAN.md`](./LEARNING_PLAN.md).
+Use [`SKILL.md`](./SKILL.md) to generate new topic folders in a new chat.
