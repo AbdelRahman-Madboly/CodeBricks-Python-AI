@@ -1,47 +1,174 @@
-# Dictionaries and Sets
+# 12 — Dictionaries and Sets
 
-## Concept
+> **The two data structures that make lookup fast.**
 
-**Dictionary** (`dict`): an unordered mapping of unique keys to values.
-Lookups, insertions, and deletions are O(1) on average — backed by a hash table.
-Use it whenever you need to associate a label with a value or look something up by name.
+---
 
-**Set** (`set`): an unordered collection of unique values.
-Also O(1) for membership tests, add, and remove. Use it for deduplication
-and set operations (union, intersection, difference).
+## Why This Matters
 
-## Mental Model
+Lists store sequences. Dicts and sets store relationships and memberships.
+In AI/ML work, dicts are everywhere: model configs, training logs, metric
+summaries, dataset registries, grouping results by class. Sets answer the
+question "have I seen this before?" in O(1) — critical when processing
+millions of frames or tokens.
+
+If lists are how you store ordered data, dicts are how you name it,
+and sets are how you deduplicate it.
+
+---
+
+## What a Dict Is
+
+```python
+config = {
+    "model":  "EfficientNet-B4",
+    "epochs": 50,
+    "lr":     0.001,
+}
+```
+
+An ordered mapping of unique keys to values. Keys must be immutable
+(strings, numbers, tuples). Values can be anything. Lookups, inserts,
+and deletes are O(1) on average — backed by a hash table.
 
 ```
-Dict — a labelled filing cabinet          Set — a bag that rejects duplicates
-───────────────────────────────           ──────────────────────────────────
-{ "model":  "ResNet",                     { "real", "fake", "uncertain" }
-  "epochs": 30,          }
-    │         │
-   key      value        ← access by key, not by position
+key          value
+───────────  ───────────────
+"model"   →  "EfficientNet-B4"
+"epochs"  →  50
+"lr"      →  0.001
 ```
 
-## Key Points
+Unlike a list (indexed by position 0, 1, 2...), a dict is indexed by name.
 
-**Dict essentials:**
-- `d[key]` — raises `KeyError` if missing; use `d.get(key, default)` for safety
-- `d[key] = value` — insert or overwrite
-- `key in d` — O(1) membership test
-- `.keys()`, `.values()`, `.items()` — views (not copies)
-- `d.setdefault(key, default)` — inserts default only if key is absent
-- Dict comprehension: `{k: v for k, v in iterable}`
+---
 
-**Set essentials:**
-- `set.add(x)`, `set.discard(x)` (no error if missing), `set.remove(x)` (raises if missing)
-- `a | b` — union, `a & b` — intersection, `a - b` — difference, `a ^ b` — symmetric difference
-- `frozenset` — immutable set, can be used as a dict key
+## What a Set Is
+
+```python
+train_labels = {"real", "fake", "uncertain"}
+```
+
+An unordered collection of unique values. No keys, no positions.
+Adding a duplicate is silently ignored. Membership testing is O(1).
+
+---
+
+## Dict Essentials
+
+```python
+d = {"a": 1, "b": 2}
+
+# Access
+d["a"]                    # 1 — KeyError if absent
+d.get("c")                # None — safe, no error
+d.get("c", 0)             # 0 — explicit default
+
+# Membership
+"a" in d                  # True — O(1)
+
+# Add / update
+d["c"] = 3                # insert or overwrite
+
+# Delete
+del d["b"]                # KeyError if absent
+d.pop("b", None)          # safe — returns None if absent
+
+# Iterate
+for key in d:             # keys only
+for key, val in d.items():   # key-value pairs
+list(d.keys())            # list of keys
+list(d.values())          # list of values
+
+# Frequency counting — the most important pattern
+counts = {}
+for item in data:
+    counts[item] = counts.get(item, 0) + 1
+
+# Grouping — second most important pattern
+groups = {}
+for item in data:
+    groups.setdefault(item["label"], []).append(item["score"])
+```
+
+---
+
+## Set Essentials
+
+```python
+a = {"real", "fake", "uncertain"}
+b = {"real", "fake", "compressed"}
+
+# Operators
+a | b   # union — all items in either
+a & b   # intersection — items in both
+a - b   # difference — in a but not b
+a ^ b   # symmetric difference — in exactly one
+
+# Mutation
+a.add("blurry")       # no-op if already present
+a.discard("blurry")   # no-op if absent (safe)
+a.remove("blurry")    # KeyError if absent
+
+# Create
+empty = set()          # NOT {} — that's an empty dict
+fs = frozenset(a)      # immutable set, usable as a dict key
+```
+
+---
 
 ## Common Mistakes
 
-- Using `d[key]` when the key might be absent — use `.get()` defensively
-- Modifying a dict while iterating over it — raises `RuntimeError`; iterate over `list(d.items())` instead
-- Assuming sets are ordered — they are not; use a `list` if order matters
-- `set([1, 2, 3])` creates a set; `{1, 2, 3}` also creates a set; but `{}` creates an empty **dict**, not a set — use `set()` for empty sets
+**KeyError on missing key**
+```python
+d = {"a": 1}
+d["b"]           # KeyError — key doesn't exist
+d.get("b", 0)    # 0 — use .get() for optional keys
+```
+
+**`{}` creates a dict, not a set**
+```python
+empty = {}        # dict — type(empty) is dict
+empty = set()     # set  — type(empty) is set
+```
+
+**Modifying a dict while iterating**
+```python
+for key in d:
+    del d[key]    # RuntimeError — can't change size during iteration
+# Fix: iterate over a copy
+for key in list(d.keys()):
+    del d[key]
+```
+
+**Counting wrong — forgetting the default**
+```python
+counts[item] += 1              # KeyError on first occurrence
+counts[item] = counts.get(item, 0) + 1   # correct
+```
+
+**Sets are unordered — don't index them**
+```python
+s = {"a", "b", "c"}
+s[0]    # TypeError — sets have no index
+```
+
+---
+
+## Time Complexity
+
+| Operation | Dict | Set | List |
+|-----------|------|-----|------|
+| Lookup `d[k]` / `x in s` | O(1) | O(1) | O(n) |
+| Insert | O(1) | O(1) | O(1) append |
+| Delete | O(1) | O(1) | O(n) |
+| Iteration | O(n) | O(n) | O(n) |
+
+The O(1) operations are why you reach for a dict or set when you need
+fast lookups — not because the syntax is nicer, but because the
+performance is fundamentally better.
+
+---
 
 ## Interview Angle
 
@@ -50,7 +177,72 @@ Dict — a labelled filing cabinet          Set — a bag that rejects duplicate
 counts = {}
 for item in items:
     counts[item] = counts.get(item, 0) + 1
+# Or: from collections import Counter; counts = Counter(items)
 ```
-Or in one line with `collections.Counter(items)`.
-Interviewers expect you to know both — the manual version shows you understand
-what Counter is doing under the hood.
+Know both. The manual version shows you understand what Counter does.
+
+*"How would you find duplicate IDs in a list?"*
+```python
+seen = set()
+dupes = set()
+for x in items:
+    if x in seen:
+        dupes.add(x)
+    seen.add(x)
+```
+
+---
+
+## Folder Structure
+
+```
+12_dicts_sets/
+├── README.md
+├── notes.md
+├── test.py
+│
+├── examples/
+│   ├── 01_dict_basics.py             — creation, access, .get(), .items(), add/delete
+│   ├── 02_frequency_and_grouping.py  — counting, .setdefault(), dict comprehensions
+│   └── 03_sets_and_operations.py     — sets, |&-^, dedup, frozenset
+│
+├── exercises/
+│   ├── 01_model_leaderboard.py       — Easy: build, query, filter a dict
+│   ├── 02_detection_grouper.py       — Medium: grouping, frequency, duplicate detection
+│   └── 03_pipeline_validator.py      — Hard: set-based field validation
+│
+└── solutions/
+    ├── 01_model_leaderboard.py
+    ├── 02_detection_grouper.py
+    └── 03_pipeline_validator.py
+```
+
+---
+
+## Connection to the AI Journey
+
+```python
+# Model config — dict is how you pass hyperparameters
+config = {"lr": 0.001, "epochs": 50, "batch_size": 32}
+lr = config.get("lr", 0.01)   # safe default for optional params
+
+# Class distribution — frequency counting before training
+label_counts = {}
+for label in dataset_labels:
+    label_counts[label] = label_counts.get(label, 0) + 1
+
+# Deduplication — remove seen frame IDs before processing
+processed = set()
+for frame in stream:
+    if frame["id"] not in processed:
+        processed.add(frame["id"])
+        process(frame)
+
+# Set operations — compare train vs val coverage
+missing_from_val = set(train_classes) - set(val_classes)
+```
+
+---
+
+*Previous → [08 — Lists](../08_lists/)*
+*Next → [15 — Exceptions](../15_exceptions/)*
