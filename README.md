@@ -14,35 +14,37 @@ to production-ready AI/ML engineering. Built around the principle that understan
 Phase 1 ──► Phase 2 ──► Phase 3 ──► Phase 4 ──► Phase 5 ──► Phase 6 ──► Phase 7 ──► Phase 8
 Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML       Projects
 3 weeks     2 weeks     1 week      1 week      1 week      3 weeks     4 weeks     2 weeks
-🔲 Active
+🔲 Active   🔲 Next
 ```
 
 ---
-
-## Phase 1 — Python Fundamentals `🔲 In Progress`
+ 
+## Phase 1 — Python Fundamentals `🔲 Active — 9/18 done`
  
 > Build the mental model: how Python thinks, manages memory, and structures programs.
  
 | # | Topic | Boot.dev | Status |
 |---|-------|----------|--------|
-| 00 | [Debugging](./01_basics/00_debugging/) | Ch 5 | ✅ Done |
-| 01 | [Printing](./01_basics/01_printing/) | Ch 1 | ✅ Done |
-| 02 | [Variables and Data Types](./01_basics/02_variables_data_types/) | Ch 2 | ✅ Done |
-| 03 | [Operators](./01_basics/03_operators/) | Ch 6–7 | ✅ Done |
-| 04 | [Control Flow](./01_basics/04_control_flow/) | Ch 7–8 | ✅ Done |
-| 05 | [Functions](./01_basics/05_functions/) | Ch 3–4 | ✅ Done |
-| 06 | [Classes and Objects](./01_basics/06_classes_intro/) | — | 🔲 |
-| 07 | [Memory and Mutability](./01_basics/07_memory_mutability/) | — | 🔲 |
-| 08 | [Lists](./01_basics/08_lists/) | Ch 9 | ✅ Done |
-| 09 | [Tuples](./01_basics/09_tuples/) | — | 🔲 |
-| 10 | [Strings](./01_basics/10_strings/) | — | 🔲 |
-| 11 | [Nested Lists](./01_basics/11_nested_lists/) | — | 🔲 |
-| 12 | [Dictionaries and Sets](./01_basics/12_dicts_sets/) | Ch 10–11 | 🔲 |
-| 13 | [Modules and Packages](./01_basics/13_modules_packages/) | — | 🔲 |
-| 14 | [File I/O](./01_basics/14_file_io/) | — | 🔲 |
-| 15 | [Exceptions](./01_basics/15_exceptions/) | Ch 12 | 🔲 |
-| 16 | [Advanced Functions](./01_basics/16_advanced_functions/) | — | 🔲 |
-| 17 | [Recursion](./01_basics/17_recursion/) | — | 🔲 |
+| 00 | [Debugging](./01_basics/00_debugging/) | Ch 5 | ✅ |
+| 01 | [Printing](./01_basics/01_printing/) | Ch 1 | ✅ |
+| 02 | [Variables and Data Types](./01_basics/02_variables_data_types/) | Ch 2 | ✅ |
+| 03 | [Operators](./01_basics/03_operators/) | Ch 6–7 | ✅ |
+| 04 | [Control Flow](./01_basics/04_control_flow/) | Ch 7–8 | ✅ |
+| 05 | [Functions](./01_basics/05_functions/) | Ch 3–4 | ✅ |
+| 06 | [Classes and Objects](./01_basics/06_classes_intro/) | — | 🔴 Next |
+| 07 | [Memory and Mutability](./01_basics/07_memory_mutability/) | — | 🔴 Next |
+| 08 | [Lists](./01_basics/08_lists/) | Ch 9 | ✅ |
+| 09 | [Tuples](./01_basics/09_tuples/) | — | 🟡 |
+| 10 | [Strings](./01_basics/10_strings/) | — | 🟡 |
+| 11 | [Nested Lists](./01_basics/11_nested_lists/) | — | 🟡 |
+| 12 | [Dictionaries and Sets](./01_basics/12_dicts_sets/) | Ch 10–11 | ✅ |
+| 13 | [Modules and Packages](./01_basics/13_modules_packages/) | — | 🟢 |
+| 14 | [File I/O](./01_basics/14_file_io/) | — | 🟢 |
+| 15 | [Exceptions](./01_basics/15_exceptions/) | Ch 12 | ✅ |
+| 16 | [Advanced Functions](./01_basics/16_advanced_functions/) | — | 🟢 |
+| 17 | [Recursion](./01_basics/17_recursion/) | — | 🟢 |
+ 
+**🔴 = must do before Phase 2 · 🟡 = do anytime · 🟢 = do in parallel with Phase 2**
  
 ---
 
@@ -135,20 +137,30 @@ CodeBricks-Python-AI/
 ├── README.md
 ├── LEARNING_PLAN.md
 ├── PROGRESS.md
-├── SKILL.md             ← paste into any new chat to generate the next topic
+├── SKILL.md              ← use with Boot.dev content to generate a topic
+├── SKILL_NOOBOOTDEV.md   ← use for topics with no Boot.dev chapter
 ├── GIT_GUIDE.md
 │
-├── 01_basics/
-│   ├── 00_debugging/    ✅  (reference — README + example only)
-│   ├── 01_printing/     ✅
+├── 01_basics/            ← 9 done, 9 remaining
+│   ├── README.md         ← phase overview with priority guide
+│   ├── 00_debugging/  ✅
+│   ├── 01_printing/   ✅
 │   ├── 02_variables_data_types/  ✅
-│   ├── 03_operators/    ✅
-│   ├── 04_control_flow/ ✅
-│   ├── 05_functions/    ✅
-│   ├── 06_classes_intro/
-│   ├── 07_memory_mutability/
-│   ├── 08_lists/        ✅
-│   └── 09–17 ...
+│   ├── 03_operators/  ✅
+│   ├── 04_control_flow/  ✅
+│   ├── 05_functions/  ✅
+│   ├── 06_classes_intro/   🔴
+│   ├── 07_memory_mutability/ 🔴
+│   ├── 08_lists/      ✅
+│   ├── 09_tuples/     🟡
+│   ├── 10_strings/    🟡
+│   ├── 11_nested_lists/ 🟡
+│   ├── 12_dicts_sets/ ✅
+│   ├── 13_modules_packages/ 🟢
+│   ├── 14_file_io/    🟢
+│   ├── 15_exceptions/ ✅
+│   ├── 16_advanced_functions/ 🟢
+│   └── 17_recursion/  🟢
 │
 │
 ├── 02_oop/

@@ -7,46 +7,78 @@ how Python works. Every topic includes a concept explanation, real-world example
 grounded in AI/ML contexts, and exercises that push past surface-level understanding.
 
 ---
-
+ 
+## Status
+ 
+**Boot.dev chapters: 12 / 12 complete ✅**
+**Repo topics: 9 done · 9 remaining (2 essential before OOP, 7 optional)**
+ 
+---
+ 
 ## Boot.dev Alignment
+ 
+| Boot.dev | Repo Topic | Status |
+|---------|------------|--------|
+| Ch 1: Introduction | `01_printing` | ✅ |
+| Ch 2: Variables | `02_variables_data_types` | ✅ |
+| Ch 3 + 4: Functions + Scope | `05_functions` | ✅ |
+| Ch 5: Testing & Debugging | `00_debugging` | ✅ |
+| Ch 6 + 7: Computing + Comparisons | `03_operators` + `04_control_flow` | ✅ |
+| Ch 8: Loops | `04_control_flow` | ✅ (absorbed) |
+| Ch 9: Lists | `08_lists` | ✅ |
+| Ch 10 + 11: Dicts + Sets | `12_dicts_sets` | ✅ |
+| Ch 12: Errors | `15_exceptions` | ✅ |
+| Ch 13: Practice | — | ✅ (absorbed into exercises) |
+| Ch 14: Quiz | — | ✅ (absorbed into test.py) |
+ 
+---
 
-These topics map directly to the Boot.dev Python course chapters:
 
-| Boot.dev Chapter | Repo Topic |
-|-----------------|------------|
-| Ch 1: Introduction | 01_printing |
-| Ch 2: Variables | 02_variables_data_types |
-| Ch 3: Functions + Ch 4: Scope | 05_functions |
-| Ch 6: Computing + Ch 7: Comparisons | 03_operators |
-| Ch 8: Loops | 04_control_flow |
-| Ch 9: Lists | 08_lists |
-| Ch 10: Dictionaries + Ch 11: Sets | 12_dicts_sets |
-| Ch 12: Errors | 15_exceptions |
+## All Topics
+ 
+| # | Topic | Boot.dev | Priority | Status |
+|---|-------|----------|----------|--------|
+| 00 | [Debugging](./00_debugging/) | Ch 5 | Reference | ✅ Done |
+| 01 | [Printing](./01_printing/) | Ch 1 | — | ✅ Done |
+| 02 | [Variables and Data Types](./02_variables_data_types/) | Ch 2 | — | ✅ Done |
+| 03 | [Operators](./03_operators/) | Ch 6–7 | — | ✅ Done |
+| 04 | [Control Flow](./04_control_flow/) | Ch 7–8 | — | ✅ Done |
+| 05 | [Functions](./05_functions/) | Ch 3–4 | — | ✅ Done |
+| 06 | [Classes and Objects](./06_classes_intro/) | No Boot.dev | 🔴 Before OOP | 🔲 |
+| 07 | [Memory and Mutability](./07_memory_mutability/) | No Boot.dev | 🔴 Before OOP | 🔲 |
+| 08 | [Lists](./08_lists/) | Ch 9 | — | ✅ Done |
+| 09 | [Tuples](./09_tuples/) | No Boot.dev | 🟡 Anytime | 🔲 |
+| 10 | [Strings](./10_strings/) | No Boot.dev | 🟡 Anytime | 🔲 |
+| 11 | [Nested Lists](./11_nested_lists/) | No Boot.dev | 🟡 Anytime | 🔲 |
+| 12 | [Dictionaries and Sets](./12_dicts_sets/) | Ch 10–11 | — | ✅ Done |
+| 13 | [Modules and Packages](./13_modules_packages/) | No Boot.dev | 🟢 Parallel | 🔲 |
+| 14 | [File I/O](./14_file_io/) | No Boot.dev | 🟢 Parallel | 🔲 |
+| 15 | [Exceptions](./15_exceptions/) | Ch 12 | — | ✅ Done |
+| 16 | [Advanced Functions](./16_advanced_functions/) | No Boot.dev | 🟢 Parallel | 🔲 |
+| 17 | [Recursion](./17_recursion/) | No Boot.dev | 🟢 Parallel | 🔲 |
+
+### Priority Legend
+- 🔴 **Before OOP** — must complete before starting Phase 2
+- 🟡 **Anytime** — complete during or after Phase 2, does not block anything
+- 🟢 **Parallel** — can do alongside Phase 2, or after completing it
 
 ---
 
-## Topics
-
-| # | Topic | Boot.dev | Key Concept | Interview Relevance |
-|---|-------|----------|-------------|---------------------|
-| 01 | [Printing](./01_printing/) | Ch 1 | `print()`, f-strings, sep, end, formatting | Low — but fluency is noticed |
-| 02 | [Variables and Data Types](./02_variables_data_types/) | Ch 2 | Dynamic typing, `type()`, `is` vs `==`, casting | Medium |
-| 03 | [Operators](./03_operators/) | Ch 6–7 | Arithmetic, comparison, logical, short-circuit | Medium |
-| 04 | [Control Flow](./04_control_flow/) | Ch 8 | `if/elif/else`, `while`, `for`, `for/else` | High — FizzBuzz, loop logic |
-| 05 | [Functions](./05_functions/) | Ch 3–4 | Scope, `*args`, `**kwargs`, mutable defaults | High — mutable default trap |
-| 06 | [Classes and Objects](./06_classes_intro/) | — | `__init__`, `self`, `__str__`, `__repr__` | High — OOP fundamentals |
-| 07 | [Memory and Mutability](./07_memory_mutability/) | — | References, shallow vs deep copy | High — aliasing bugs |
-| 08 | [Lists](./08_lists/) | Ch 9 | Slicing, comprehensions, `sort` vs `sorted` | High |
-| 09 | [Tuples](./09_tuples/) | — | Immutability, unpacking, dict keys | Medium |
-| 10 | [Strings](./10_strings/) | — | Methods, `join`, f-strings, immutability | High |
-| 11 | [Nested Lists](./11_nested_lists/) | — | 2D indexing, `*` copy trap, transpose | High — matrix ops |
-| 12 | [Dictionaries and Sets](./12_dicts_sets/) | Ch 10–11 | Hash tables, `.get()`, set operations | High — frequency counting |
-| 13 | [Modules and Packages](./13_modules_packages/) | — | Import system, `__name__`, `pathlib` | Medium |
-| 14 | [File I/O](./14_file_io/) | — | `with open()`, JSON, CSV, line iteration | Medium |
-| 15 | [Exceptions](./15_exceptions/) | Ch 12 | `try/except/else/finally`, custom exceptions | High |
-| 16 | [Advanced Functions](./16_advanced_functions/) | — | Closures, `partial`, `map`, `filter` | High — closures |
-| 17 | [Recursion](./17_recursion/) | — | Base case, memoisation, `lru_cache` | High — tree traversal |
-
+## Recommended Path to OOP
+ 
+### Step 1 — Do now (1–2 days each)
+Complete `06_classes_intro` and `07_memory_mutability` before opening Phase 2.
+Phase 2 builds directly on classes. Memory and mutability explains why OOP
+uses references the way it does.
+ 
+### Step 2 — Start Phase 2
+Open `02_oop/` and begin. You have enough foundation.
+ 
+### Step 3 — Fill in remaining topics as you go
+Topics 09, 10, 11, 13, 14, 16, 17 don't block OOP.
+Do one per week alongside Phase 2, or batch them after finishing it.
+Use `SKILL_NOOBOOTDEV.md` to generate any of these in a new chat.
+ 
 ---
 
 ## Folder Structure (per topic)
@@ -73,6 +105,8 @@ These topics map directly to the Boot.dev Python course chapters:
     └── 03_<name>.py
 ```
 
+Exception: `00_debugging` is a reference folder — `README.md` + one example only.
+
 ---
 
 ## How to Work Through Each Topic
@@ -89,54 +123,20 @@ The notes step is the easiest to skip and the most valuable not to skip.
 ---
 
 ## Phase 1 Completion Checklist
-
-You are ready to move to Phase 2 when you can do all of these from memory:
-
-- [ ] Explain dynamic typing and give an example where it causes a bug
+ 
+You are ready for Phase 2 when you can do all of these from memory:
+ 
 - [ ] Write a function with type hints, a docstring, and a mutable default fix
-- [ ] Build a class with `__init__`, `__str__`, and two methods from memory
+- [ ] Build a class with `__init__`, `__str__`, and two methods
 - [ ] Explain the difference between `is` and `==` with a concrete example
-- [ ] Explain shallow vs deep copy and when each is needed
+- [ ] Explain shallow vs deep copy and show when each is needed
 - [ ] Write a list comprehension with a filter condition
-- [ ] Write a recursive function with a clear base case and memoisation
-- [ ] Group a list of dicts by a key field using only a dict and a loop
-- [ ] Parse a JSON file and handle `FileNotFoundError` gracefully
+- [ ] Count item frequencies in a list using a dict
+- [ ] Use a set to find items in one list but not another
+- [ ] Write a recursive function with a base case
+- [ ] Handle a missing file with `try/except FileNotFoundError`
 - [ ] Explain what a closure is and write one from scratch
-
----
-
-## Key Patterns to Carry Forward
-
-These appear in every phase and every real project:
-
-```python
-# Mutable default fix
-def func(items=None):
-    if items is None:
-        items = []
-
-# Safe dict access
-value = d.get("key", default)
-
-# Frequency counting
-counts = {}
-for item in data:
-    counts[item] = counts.get(item, 0) + 1
-
-# Safe file loading with exception handling
-try:
-    with open(path, encoding="utf-8") as f:
-        data = json.load(f)
-except FileNotFoundError:
-    data = {}
-
-# main() entry point pattern
-def main():
-    ...   # all logic here
-
-if __name__ == "__main__":
-    main()
-```
+- [ ] Explain the difference between mutable and immutable types
 
 ---
 
