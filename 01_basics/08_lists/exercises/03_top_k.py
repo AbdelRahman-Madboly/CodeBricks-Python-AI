@@ -3,19 +3,16 @@ exercises/03_top_k.py
 ──────────────────────
 Topic    : Lists
 Exercise : 3 of 3 — Hard
-Concept  : Manual search/sort logic, list methods, no built-in sort
-
-Context
--------
-In evaluation you often need the top-K model predictions by confidence
-score. This exercise makes you implement it manually — which builds
-understanding of what sorted() actually does under the hood.
+Concept  : Manual search logic, shallow copy trap, running average
 
 ─────────────────────────────────────────────────────────────────
 Task A — find_top_k()
 ─────────────────────────────────────────────────────────────────
 Return the k highest values from a list, in descending order.
 Do NOT use sorted(), sort(), max(), min(), or any import.
+
+Hint: loop k times. Each pass, find the max index manually,
+append its value to result, and pop it from a working copy.
 
 Signature:
   def find_top_k(values: list[float], k: int) -> list[float]
@@ -24,71 +21,61 @@ Expected:
   find_top_k([0.72, 0.95, 0.61, 0.97, 0.88, 0.92, 0.45], 3)
   → [0.97, 0.95, 0.92]
 
-Hint: loop k times. Each time, find the index of the current
-maximum manually, append it to the result, and remove it from
-a working copy so you don't pick the same value twice.
-
 ─────────────────────────────────────────────────────────────────
 Task B — running_average()
 ─────────────────────────────────────────────────────────────────
-Given a list of loss values, return a new list where each entry
-is the average of all values up to and including that index.
+Return a list where each entry is the average of all values
+up to and including that index.
 
 Signature:
   def running_average(values: list[float]) -> list[float]
 
 Expected:
-  running_average([0.9, 0.7, 0.5, 0.4])
-  → [0.9, 0.8, 0.7, 0.625]
+  running_average([0.9, 0.7, 0.5, 0.4]) → [0.9, 0.8, 0.7, 0.625]
 
 ─────────────────────────────────────────────────────────────────
-Task C — Shallow copy trap (no code to write)
+Task C — Shallow copy predictions (no code to write)
 ─────────────────────────────────────────────────────────────────
-Predict what each snippet prints. Then uncomment and run to verify.
-─────────────────────────────────────────────────────────────────
+Write your prediction as a comment, then uncomment and run.
 """
 
 # ── Your functions ────────────────────────────────────────────────────────────
 
 
-# ── Task C — predictions ──────────────────────────────────────────────────────
+# ── Task C ────────────────────────────────────────────────────────────────────
 
-# Snippet 1 — what prints?
+# Snippet 1 — what does grid look like after the assignment?
 # grid = [[0] * 3] * 3
 # grid[1][1] = 9
 # print(grid)
-# Your prediction: ???
+# Prediction: ???
 
-# Snippet 2 — what prints?
+# Snippet 2
 # grid = [[0] * 3 for _ in range(3)]
 # grid[1][1] = 9
 # print(grid)
-# Your prediction: ???
+# Prediction: ???
 
-# Snippet 3 — what is result?
+# Snippet 3 — alias vs copy
 # a = [1, 2, 3]
-# b = a           # assignment — not a copy
+# b = a
 # b.append(4)
-# print(a)        # ???
-# Your prediction: ???
+# print(a)
+# Prediction: ???
 
-# Snippet 4 — what is result?
+# Snippet 4
 # a = [1, 2, 3]
-# b = a[:]        # slice copy — creates a new list
+# b = a[:]
 # b.append(4)
-# print(a)        # ???
-# Your prediction: ???
+# print(a)
+# Prediction: ???
 
 
 # ── Test calls (uncomment after writing your functions) ───────────────────────
 
-# Task A
 # scores = [0.72, 0.95, 0.61, 0.97, 0.88, 0.92, 0.45]
 # print(find_top_k(scores, 3))   # [0.97, 0.95, 0.92]
 # print(find_top_k(scores, 1))   # [0.97]
-# print(find_top_k(scores, 7))   # all 7 values in descending order
 
-# Task B
-# print(running_average([0.9, 0.7, 0.5, 0.4]))    # [0.9, 0.8, 0.7, 0.625]
-# print(running_average([1.0]))                    # [1.0]
-# print(running_average([0.5, 0.5, 0.5]))          # [0.5, 0.5, 0.5]
+# print(running_average([0.9, 0.7, 0.5, 0.4]))   # [0.9, 0.8, 0.7, 0.625]
+# print(running_average([1.0]))                   # [1.0]

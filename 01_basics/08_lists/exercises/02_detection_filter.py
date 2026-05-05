@@ -5,12 +5,6 @@ Topic    : Lists
 Exercise : 2 of 3 — Medium
 Concept  : List comprehensions, enumerate, zip, accumulation
 
-Context
--------
-A detection model returns a list of results per image. You need to
-filter, transform, compare, and summarise these results using loops
-and comprehensions.
-
 ─────────────────────────────────────────────────────────────────
 Task A — Comprehension filter + transform
 ─────────────────────────────────────────────────────────────────
@@ -23,9 +17,8 @@ Expected output:
 ─────────────────────────────────────────────────────────────────
 Task B — Accumulation with enumerate
 ─────────────────────────────────────────────────────────────────
-Print each epoch's loss with a 1-based epoch number, the loss,
-and a simple trend arrow (↓ if loss decreased, ↑ if increased,
-→ for the first epoch which has no comparison).
+Print each epoch with a trend arrow: ↓ if loss fell, ↑ if rose,
+→ for the first epoch (no comparison).
 
 Expected output:
   Epoch  1 | loss=0.9100  →
@@ -37,15 +30,13 @@ Expected output:
 ─────────────────────────────────────────────────────────────────
 Task C — zip comparison + accuracy
 ─────────────────────────────────────────────────────────────────
-Using zip(), compare predictions against labels, count correct ones,
-and print a one-line summary.
+Using zip(), count correct predictions and print:
 
 Expected output:
   Correct: 7/10  Accuracy: 70%
 ─────────────────────────────────────────────────────────────────
 """
 
-# Task A data
 detections = [
     {"image": "img_001", "label": "face",       "confidence": 0.94},
     {"image": "img_002", "label": "background", "confidence": 0.87},
@@ -54,10 +45,8 @@ detections = [
     {"image": "img_005", "label": "hand",       "confidence": 0.85},
 ]
 
-# Task B data
 epoch_losses = [0.91, 0.74, 0.82, 0.58, 0.39]
 
-# Task C data
 predictions = [1, 0, 1, 1, 0, 1, 0, 0, 1, 1]
 true_labels = [1, 0, 1, 0, 0, 1, 1, 0, 1, 0]
 

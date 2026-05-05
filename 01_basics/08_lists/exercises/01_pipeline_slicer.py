@@ -3,7 +3,7 @@ exercises/01_pipeline_slicer.py
 ────────────────────────────────
 Topic    : Lists
 Exercise : 1 of 3 — Easy
-Concept  : Indexing, slicing, negative indices, basic methods
+Concept  : Indexing, slicing, negative indices
 
 Context
 -------
@@ -21,29 +21,25 @@ print a summary that looks EXACTLY like this:
   Last stage       : save_model
   Preprocessing    : ['normalize', 'augment']
   Core stages      : ['tokenize', 'embed', 'classify']
-  Every other      : ['load_data', 'normalize', 'embed', 'save_model']
-  Reversed         : ['save_model', 'augment', 'classify', 'embed', 'tokenize', 'normalize', 'augment', 'load_data']
-
-Wait — that reversed output looks wrong. Look at the pipeline carefully.
-One of the stage names is duplicated and that's intentional.
-Your code should reflect the actual list — don't hardcode.
+  Every other      : ['load_data', 'augment', 'embed', 'augment']
+  Reversed         : ['save_model', 'augment', 'classify', 'embed', 'tokenize', 'augment', 'normalize', 'load_data']
 
 Rules:
   - No loops
   - No hardcoded values — all output must come from the list
-  - Use only indexing `lst[i]` and slicing `lst[a:b:c]`
+  - Use only indexing lst[i] and slicing lst[a:b:c]
 ─────────────────────────────────────────────────────────────────
 """
 
 pipeline = [
-    "load_data",     # 0
-    "normalize",     # 1
-    "augment",       # 2
-    "tokenize",      # 3
-    "embed",         # 4
-    "classify",      # 5
-    "augment",       # 6  — post-processing augment (different role, same name)
-    "save_model",    # 7
+    "load_data",
+    "normalize",
+    "augment",
+    "tokenize",
+    "embed",
+    "classify",
+    "augment",
+    "save_model",
 ]
 
 # ── Your solution ─────────────────────────────────────────────────────────────
