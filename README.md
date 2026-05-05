@@ -20,19 +20,20 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 ---
 
 ## Phase 1 — Python Fundamentals `🔲 In Progress`
-
+ 
 > Build the mental model: how Python thinks, manages memory, and structures programs.
-
+ 
 | # | Topic | Boot.dev | Status |
 |---|-------|----------|--------|
+| 00 | [Debugging](./01_basics/00_debugging/) | Ch 5 | ✅ Done |
 | 01 | [Printing](./01_basics/01_printing/) | Ch 1 | ✅ Done |
 | 02 | [Variables and Data Types](./01_basics/02_variables_data_types/) | Ch 2 | ✅ Done |
-| 03 | [Operators](./01_basics/03_operators/) | Ch 6–7 | 🔲 |
-| 04 | [Control Flow](./01_basics/04_control_flow/) | Ch 8 | 🔲 |
+| 03 | [Operators](./01_basics/03_operators/) | Ch 6–7 | ✅ Done |
+| 04 | [Control Flow](./01_basics/04_control_flow/) | Ch 7–8 | ✅ Done |
 | 05 | [Functions](./01_basics/05_functions/) | Ch 3–4 | ✅ Done |
 | 06 | [Classes and Objects](./01_basics/06_classes_intro/) | — | 🔲 |
 | 07 | [Memory and Mutability](./01_basics/07_memory_mutability/) | — | 🔲 |
-| 08 | [Lists](./01_basics/08_lists/) | Ch 9 | 🔲 |
+| 08 | [Lists](./01_basics/08_lists/) | Ch 9 | ✅ Done |
 | 09 | [Tuples](./01_basics/09_tuples/) | — | 🔲 |
 | 10 | [Strings](./01_basics/10_strings/) | — | 🔲 |
 | 11 | [Nested Lists](./01_basics/11_nested_lists/) | — | 🔲 |
@@ -42,7 +43,7 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 | 15 | [Exceptions](./01_basics/15_exceptions/) | Ch 12 | 🔲 |
 | 16 | [Advanced Functions](./01_basics/16_advanced_functions/) | — | 🔲 |
 | 17 | [Recursion](./01_basics/17_recursion/) | — | 🔲 |
-
+ 
 ---
 
 ## Phase 2 — Object-Oriented Programming `🔲 Not started`
@@ -131,21 +132,24 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 
 ```
 CodeBricks-Python-AI/
+├── README.md
+├── LEARNING_PLAN.md
+├── PROGRESS.md
+├── SKILL.md             ← paste into any new chat to generate the next topic
+├── GIT_GUIDE.md
 │
-├── README.md            ← this file
-├── LEARNING_PLAN.md     ← 16-week schedule, Boot.dev chapter alignment
-├── PROGRESS.md          ← topic checklist
-├── SKILL.md             ← prompt for generating new topic folders in a new chat
-├── GIT_GUIDE.md         ← exact git commands for pushing each topic
-│
-├── 01_basics/           ← 17 topics, in progress
-│   ├── README.md
+├── 01_basics/
+│   ├── 00_debugging/    ✅  (reference — README + example only)
 │   ├── 01_printing/     ✅
 │   ├── 02_variables_data_types/  ✅
-│   ├── 03_operators/
-│   ├── 04_control_flow/
+│   ├── 03_operators/    ✅
+│   ├── 04_control_flow/ ✅
 │   ├── 05_functions/    ✅
-│   └── ...
+│   ├── 06_classes_intro/
+│   ├── 07_memory_mutability/
+│   ├── 08_lists/        ✅
+│   └── 09–17 ...
+│
 │
 ├── 02_oop/
 ├── 03_pythonic/

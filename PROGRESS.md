@@ -7,14 +7,15 @@ and have completed at least two of the three exercises.
 
 ## Phase 1 — Basics
 
+- [x] 00 — Debugging (reference folder — read once, reference always)
 - [x] 01 — Printing
 - [x] 02 — Variables and Data Types
-- [ ] 03 — Operators
-- [ ] 04 — Control Flow
+- [x] 03 — Operators
+- [x] 04 — Control Flow
 - [x] 05 — Functions
 - [ ] 06 — Classes and Objects (intro)
 - [ ] 07 — Memory and Mutability
-- [ ] 08 — Lists
+- [x] 08 — Lists
 - [ ] 09 — Tuples
 - [ ] 10 — Strings
 - [ ] 11 — Nested Lists
