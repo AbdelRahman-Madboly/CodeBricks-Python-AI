@@ -1,0 +1,1583 @@
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L1: Polymorphism
+Back
+Next
+
+Polymorphism
+Click to hide video
+
+While inheritance is the most unique trait of object-oriented languages, polymorphism is probably the most powerful. It also is not particularly unique to class-based languages. Polymorphism is the ability of a variable, function or object to take on multiple forms.
+
+"poly" = "many"
+"morph" = "form"
+For example, classes in the same hierarchical tree may have methods with the same name and signature but different implementations. Here's a simple example:
+
+class Creature():
+    def move(self):
+        print("the creature moves")
+
+class Dragon(Creature):
+    def move(self):
+        print("the dragon flies")
+
+class Kraken(Creature):
+    def move(self):
+        print("the kraken swims")
+
+for creature in [Creature(), Dragon(), Kraken()]:
+    creature.move()
+# prints:
+# the creature moves
+# the dragon flies
+# the kraken swims
+
+Because all three classes have a .move() method, we can shove the objects into a single list, and call the same method on each of them, even though the implementation (method body) is different.
+
+This idea is sometimes referred to as "duck typing". If it looks like a duck, swims like a duck, and quacks like a duck, it's a duck. Or, in our example, if it has a .move() method, we can treat it like a Creature.
+
+Assignment
+Let's build some hit-box logic for our game, starting with a simple Rectangle.
+
+Complete the __init__() method. Configure the class to have properties matching the variables passed into the constructor in this order:
+
+x1
+y1
+x2
+y2
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Coffee Connoisseur, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+class Rectangle:
+    def __init__(self, x1, y1, x2, y2):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L2: Get Edges
+Back
+Next
+
+Get Edges
+In the last chapter we checked if a unit's (x, y) point was within a rectangle (the Dragon's breath). But units aren't really points - they have their own areas.
+
+So we're going to check if a dragon's body (a rectangle) is within the fire (also a rectangle). The image below contains an example of fire breath hitting a dragon.
+
+
+
+Later we'll write the overlap method, but first we'll just write a method to find the edges of a rectangle.
+
+Assignment
+We changed the coordinates themselves to be private by adding two underscores to them. We now need to write getter methods to access them.
+
+Complete the following methods:
+
+get_left_x(): Returns the leftmost (smallest) x value
+get_right_x(): Returns the rightmost (largest) x value
+get_top_y(): Returns the topmost (largest) y value
+get_bottom_y(): Returns the bottom-most (smallest) y value
+Remember that we're working with a standard Cartesian plane.
+
+We will explain the __repr__ method later, don't worry too much about it.
+
+Tips
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the King of the Keyboard, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+class Rectangle:
+    def __init__(self, x1, y1, x2, y2):
+        self.__x1 = x1
+        self.__y1 = y1
+        self.__x2 = x2
+        self.__y2 = y2
+
+    def get_left_x(self):
+        return min(self.__x1, self.__x2)
+
+    def get_right_x(self):
+        return max(self.__x1, self.__x2)
+
+    def get_top_y(self):
+        return max(self.__y1, self.__y2)
+
+    def get_bottom_y(self):
+        return min(self.__y1, self.__y2)
+
+    # don't touch below this line
+
+    def __repr__(self):
+        return f"Rectangle({self.__x1}, {self.__y1}, {self.__x2}, {self.__y2})"
+
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L3: Overlap
+Back
+Next
+
+Overlap
+
+
+Time to write the logic that determines if two rectangles overlap!
+
+Assignment
+Complete the overlaps() method. It should check if the current rectangle (self) overlaps a given rectangle (rect).
+
+Return True if self overlaps any part of rect, including just touching sides. Return False otherwise.
+
+Tips
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Primeval 10x Developer, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+class Rectangle:
+    def overlaps(self, rect):
+        # 1. self's left side is on or to the left of rect's right side
+        left_check = self.get_left_x() <= rect.get_right_x()
+        
+        # 2. self's right side is on or to the right of rect's left side
+        right_check = self.get_right_x() >= rect.get_left_x()
+        
+        # 3. self's top side is on or above rect's bottom side
+        top_check = self.get_top_y() >= rect.get_bottom_y()
+        
+        # 4. self's bottom side is on or below rect's top side
+        bottom_check = self.get_bottom_y() <= rect.get_top_y()
+
+        # All four must be True for there to be an overlap
+        return left_check and right_check and top_check and bottom_check
+
+    # don't touch below this line
+
+    def __init__(self, x1, y1, x2, y2):
+        self.__x1 = x1
+        self.__y1 = y1
+        self.__x2 = x2
+        self.__y2 = y2
+
+    def get_left_x(self):
+        return min(self.__x1, self.__x2)
+
+    def get_right_x(self):
+        return max(self.__x1, self.__x2)
+
+    def get_top_y(self):
+        return max(self.__y1, self.__y2)
+
+    def get_bottom_y(self):
+        return min(self.__y1, self.__y2)
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L4: Dragon Area
+Back
+Next
+
+Dragon Area
+Our Unit class has its simple version of in_area - it just checks if the center point of the unit is within the given area. But the Dragon is a big creature, and it doesn't make sense to check if a single point is within the area. So, we'll use a hit box instead!
+
+This is the current behavior:
+
+
+
+We want to change it so that a dragon is within an area if its hit box overlaps with it:
+
+
+
+Since Dragon is a child class of Unit, it can override the in_area of the Unit class with its own behavior. Yay polymorphism! The Dragon still acts like a Unit (has an in_area method), but it has its own implementation.
+
+Assignment
+Complete the Dragon's constructor:
+Call constructor of the Unit class with the provided parameters
+Set the dragon-specific parameters as instance variables
+Create a new private __hit_box member. It's a Rectangle object representing the dragon's hit box. See the tips below if you need help.
+Override the in_area method in the Dragon class:
+Create a new rectangle object with the given corner positions.
+Use the rectangle's overlaps method to check if the Dragon's self.__hit_box is inside it, and return the result.
+The given pos_x and pos_y for any unit is the center point of that unit!
+
+Tips
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Fearless Friday Deployer, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+class Unit:
+    def __init__(self, name, pos_x, pos_y):
+        self.name = name
+        self.pos_x = pos_x
+        self.pos_y = pos_y
+
+    def in_area(self, x1, y1, x2, y2):
+        return (
+            self.pos_x >= x1
+            and self.pos_x <= x2
+            and self.pos_y >= y1
+            and self.pos_y <= y2
+        )
+
+class Rectangle:
+    def __init__(self, x1, y1, x2, y2):
+        self.__x1 = x1
+        self.__y1 = y1
+        self.__x2 = x2
+        self.__y2 = y2
+
+    def get_left_x(self):
+        return min(self.__x1, self.__x2)
+
+    def get_right_x(self):
+        return max(self.__x1, self.__x2)
+
+    def get_top_y(self):
+        return max(self.__y1, self.__y2)
+
+    def get_bottom_y(self):
+        return min(self.__y1, self.__y2)
+
+    def overlaps(self, rect):
+        return (
+            self.get_left_x() <= rect.get_right_x()
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L5: Polymorphism Review
+Back
+Next
+
+
+You're on assignment part 1/4 for this lesson.
+
+Polymorphism Review
+The Greek roots of the word "polymorphism" are:
+
+"poly" means "many".
+"morph" means "to change" or "form".
+Polymorphism in programming is the ability to present the same interface (function or method signatures) for many different underlying forms (data types).
+
+A classic example is a Shape class that Rectangle, Circle, and Triangle can inherit from. Each has different underlying data:
+
+The circle needs its center point coordinates and radius
+The rectangle needs two coordinates for the top left and bottom right corners
+The triangle needs coordinates for the corners
+Polymorphism is where each type is responsible for its own data and code, but still adheres to the same interface, in this case a simple method "signature":
+
+def draw_shape(self)
+
+So now we can treat shapes as the same even though they are different. It hides the complexities of the difference behind a clean abstraction.
+
+shapes = [Circle(5, 5, 10), Rectangle(1, 3, 5, 6)]
+for shape in shapes:
+    print(shape.draw_shape())
+
+What Is a Function Signature?
+A function signature (or method signature) includes the name, inputs, and outputs of a function or method. For example, hit_by_fire in the Human and Archer classes have identical signatures.
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self):
+        self.health -= 10
+        return self.health
+
+Both methods have the same name, take no additional inputs, and return integers. If any of those things were different, they would have different function signatures. Here are methods with different signatures:
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self, dmg):
+        self.health -= dmg
+        return self.health
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Sleepy Spellcaster, can assist without penalty!
+
+Ask Boots a question...
+
+'Poly' means ____ and 'morph' means ____.
+
+
+1
+
+Many, form
+
+2
+
+Form, many
+
+3
+
+Few, changing
+
+4
+
+Changing, few
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L6: Polymorphism Review
+Back
+Next
+
+You're on assignment part 2/4 for this lesson.
+
+Polymorphism Review
+The Greek roots of the word "polymorphism" are:
+
+"poly" means "many".
+"morph" means "to change" or "form".
+Polymorphism in programming is the ability to present the same interface (function or method signatures) for many different underlying forms (data types).
+
+A classic example is a Shape class that Rectangle, Circle, and Triangle can inherit from. Each has different underlying data:
+
+The circle needs its center point coordinates and radius
+The rectangle needs two coordinates for the top left and bottom right corners
+The triangle needs coordinates for the corners
+Polymorphism is where each type is responsible for its own data and code, but still adheres to the same interface, in this case a simple method "signature":
+
+def draw_shape(self)
+
+So now we can treat shapes as the same even though they are different. It hides the complexities of the difference behind a clean abstraction.
+
+shapes = [Circle(5, 5, 10), Rectangle(1, 3, 5, 6)]
+for shape in shapes:
+    print(shape.draw_shape())
+
+What Is a Function Signature?
+A function signature (or method signature) includes the name, inputs, and outputs of a function or method. For example, hit_by_fire in the Human and Archer classes have identical signatures.
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self):
+        self.health -= 10
+        return self.health
+
+Both methods have the same name, take no additional inputs, and return integers. If any of those things were different, they would have different function signatures. Here are methods with different signatures:
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self, dmg):
+        self.health -= dmg
+        return self.health
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Magnificent, can assist without penalty!
+
+Ask Boots a question...
+
+The main benefit of polymorphism is...
+
+
+1
+
+...to write fewer lines of code in your class
+
+2
+
+...to give users of your code different function signatures for a single method
+
+3
+
+...for the caller to be able to treat different types as the same type when using them
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L7: Polymorphism Review
+Back
+Next
+
+You're on assignment part 3/4 for this lesson.
+
+Polymorphism Review
+The Greek roots of the word "polymorphism" are:
+
+"poly" means "many".
+"morph" means "to change" or "form".
+Polymorphism in programming is the ability to present the same interface (function or method signatures) for many different underlying forms (data types).
+
+A classic example is a Shape class that Rectangle, Circle, and Triangle can inherit from. Each has different underlying data:
+
+The circle needs its center point coordinates and radius
+The rectangle needs two coordinates for the top left and bottom right corners
+The triangle needs coordinates for the corners
+Polymorphism is where each type is responsible for its own data and code, but still adheres to the same interface, in this case a simple method "signature":
+
+def draw_shape(self)
+
+So now we can treat shapes as the same even though they are different. It hides the complexities of the difference behind a clean abstraction.
+
+shapes = [Circle(5, 5, 10), Rectangle(1, 3, 5, 6)]
+for shape in shapes:
+    print(shape.draw_shape())
+
+What Is a Function Signature?
+A function signature (or method signature) includes the name, inputs, and outputs of a function or method. For example, hit_by_fire in the Human and Archer classes have identical signatures.
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self):
+        self.health -= 10
+        return self.health
+
+Both methods have the same name, take no additional inputs, and return integers. If any of those things were different, they would have different function signatures. Here are methods with different signatures:
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self, dmg):
+        self.health -= dmg
+        return self.health
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Hump Day Holdout, can assist without penalty!
+
+Ask Boots a question...
+
+Methods on different classes can have the same signature
+
+
+1
+
+True
+
+2
+
+False
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L8: Polymorphism Review
+Back
+Next
+
+You're on assignment part 4/4 for this lesson.
+
+Polymorphism Review
+The Greek roots of the word "polymorphism" are:
+
+"poly" means "many".
+"morph" means "to change" or "form".
+Polymorphism in programming is the ability to present the same interface (function or method signatures) for many different underlying forms (data types).
+
+A classic example is a Shape class that Rectangle, Circle, and Triangle can inherit from. Each has different underlying data:
+
+The circle needs its center point coordinates and radius
+The rectangle needs two coordinates for the top left and bottom right corners
+The triangle needs coordinates for the corners
+Polymorphism is where each type is responsible for its own data and code, but still adheres to the same interface, in this case a simple method "signature":
+
+def draw_shape(self)
+
+So now we can treat shapes as the same even though they are different. It hides the complexities of the difference behind a clean abstraction.
+
+shapes = [Circle(5, 5, 10), Rectangle(1, 3, 5, 6)]
+for shape in shapes:
+    print(shape.draw_shape())
+
+What Is a Function Signature?
+A function signature (or method signature) includes the name, inputs, and outputs of a function or method. For example, hit_by_fire in the Human and Archer classes have identical signatures.
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self):
+        self.health -= 10
+        return self.health
+
+Both methods have the same name, take no additional inputs, and return integers. If any of those things were different, they would have different function signatures. Here are methods with different signatures:
+
+class Human:
+    def hit_by_fire(self):
+        self.health -= 5
+        return self.health
+
+class Archer:
+    def hit_by_fire(self, dmg):
+        self.health -= dmg
+        return self.health
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the King of the Keyboard, can assist without penalty!
+
+Ask Boots a question...
+
+def add(a, b) return a + b and def add(a, b, c) return a + b + c have the same signature
+
+
+1
+
+True
+
+2
+
+False
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L9: Operator Overloading
+Back
+Next
+
+
+Operator Overloading
+Another kind of built-in polymorphism in Python is the ability to override how an operator works. For example, the + operator works for built-in types like integers and strings.
+
+print(3 + 4)
+# 7
+
+print("three " + "four")
+# three four
+
+Custom classes on the other hand don't have any built-in support for those operators:
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+p1 = Point(4, 5)
+p2 = Point(2, 3)
+p3 = p1 + p2
+# TypeError: unsupported operand type(s) for +: 'Point' and 'Point'
+
+But we can add our own support! If we create an __add__(self, other) method on our class, the Python interpreter will use it when instances of the class are being added with the + operator. The name of the second parameter (other in this example) is just a convention - you can use any valid parameter name. Here's an example:
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x, y)
+
+p1 = Point(4, 5)
+p2 = Point(2, 3)
+p3 = p1 + p2
+# p3 is (6, 8)
+
+Now, when p1 + p2 is executed, under the hood the Python interpreter just calls p1.__add__(p2).
+
+Assignment
+In Age of Dragons, players craft new weapons from old ones. To keep this mechanic simple for other developers, we'll use operator overloading on the Sword class.
+
+Observe how the test suite uses the + operator to craft the swords.
+
+Create an __add__(self, other) method on the Sword class.
+
+If two "bronze" swords are crafted together, return a new Sword of type "iron".
+If two "iron" swords are crafted together, return a new Sword of type "steel".
+If a player tries to craft anything other than 2 bronze swords or 2 iron swords, just raise an Exception with the message "cannot craft".
+Note that a sword's sword_type is just a string, one of:
+
+bronze
+iron
+steel
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Bear with a Back-End, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+
+
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+class Sword:
+    def __init__(self, sword_type):
+        self.sword_type = sword_type
+
+    def __add__(self, other):
+        # Check for two bronze swords
+        if self.sword_type == "bronze" and other.sword_type == "bronze":
+            return Sword("iron")
+        
+        # Check for two iron swords
+        if self.sword_type == "iron" and other.sword_type == "iron":
+            return Sword("steel")
+        
+        # If the types don't match our crafting recipes, raise an Exception
+        raise Exception("cannot craft")
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L10: Operator Overload Review
+Back
+Next
+
+Operator Overload Review
+As we discussed in the last assignment, operator overloading is the practice of defining custom behavior for standard Python operators. Here's a list of how the operators translate into method names.
+
+Operation	Operator	Method
+Addition	+	__add__
+Subtraction	-	__sub__
+Multiplication	*	__mul__
+Power	**	__pow__
+Division	/	__truediv__
+Floor Division	//	__floordiv__
+Remainder (modulo)	%	__mod__
+Bitwise Left Shift	<<	__lshift__
+Bitwise Right Shift	>>	__rshift__
+Bitwise AND	&	__and__
+Bitwise OR	|	__or__
+Bitwise XOR	^	__xor__
+Bitwise NOT	~	__invert__
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Magnificent, can assist without penalty!
+
+Ask Boots a question...
+
+Which is the inverse of __mul__?
+
+
+1
+
+__truediv__
+
+2
+
+__pow__
+
+3
+
+__invert__
+
+4
+
+__and__
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L11: Overriding Built-In Methods
+Back
+Next
+
+Overriding Built-In Methods
+Last but not least, let's take a look at some of the built-in methods we can override in Python. While there isn't a default behavior for the arithmetic operators like we just saw, there is a default behavior for printing a class instance:
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+p1 = Point(4, 5)
+print(p1)
+# prints "<Point object at 0xa0acf8>"
+
+That's not super useful! We probably want to see the fields!
+
+Let's teach our Point class to print itself. The __str__ method (short for "string") lets us do just that. It takes no inputs but returns a string that will be printed to the console when someone passes an instance of the class to Python's print() function.
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"({self.x},{self.y})"
+
+p1 = Point(4, 5)
+print(p1)
+# prints "(4,5)"
+
+The __repr__ method works similarly: the difference is that it's intended for use in debugging by developers, rather than in printing strings to end users.
+
+Assignment
+Dragons are egotistical creatures, let's give them a great format for announcing their presence in "Age of Dragons". When print() is called on an instance of a Dragon, the string I am NAME, the COLOR dragon should be printed.
+
+Where NAME is the name of the dragon, and COLOR is its color.
+
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Primeval 10x Developer, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+class Dragon:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+    def __str__(self):
+        return f"I am {self.name}, the {self.color} dragon"
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L12: Polymorphism Practice
+Back
+Next
+
+Polymorphism Practice
+Let's continue working on the card game we started in an earlier practice problem. Let's add some logic to our Card class to simplify comparing one instance of a Card to another.
+
+Ranking Cards
+To compare two cards, we need a set of rules.
+
+The rank (value) of the card (2, 3... King, Ace) is the primary comparison. A "King" is always greater than a "Queen", regardless of suit.
+Only if the ranks are identical do we look at the suit (Clubs, Diamonds, Hearts, Spades).
+The global lists RANKS and SUITS define the order. The higher the index, the higher the value.
+Card("Ace", "Hearts") > Card("Queen", "Hearts") is True because "Ace" has a higher index than "Queen".
+Card("King", "Spades") > Card("King", "Hearts") is True because "Spades" comes after "Hearts" in the SUITS list.
+Assignment
+Complete the Card class:
+
+Define a constructor that takes rank and suit as parameters and sets rank, suit, rank_index, and suit_index instance variables.
+You will need the indexes of the ranks, and suits to help you compare them against each other. Keep in mind that a rank and a suit are just strings within a list.
+Overload the following comparison operators so that they reflect the ranking explained in the previous section:
+==: __eq__
+>: __gt__
+<: __lt__
+The .index list method is very useful when trying to determine the index of an element in a list.
+
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Lover of Salmon, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+SUITS = ["Clubs", "Diamonds", "Hearts", "Spades"]
+RANKS = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+
+class Card:
+    def __init__(self, rank, suit):
+        self.rank = rank
+        self.suit = suit
+        # Use .index() to find the "power level" of the rank and suit
+        self.rank_index = RANKS.index(rank)
+        self.suit_index = SUITS.index(suit)
+
+    def __eq__(self, other):
+        # Two cards are equal only if both rank and suit indices match
+        return self.rank_index == other.rank_index and self.suit_index == other.suit_index
+
+    def __lt__(self, other):
+        # If ranks are different, the lower rank index wins
+        if self.rank_index != other.rank_index:
+            return self.rank_index < other.rank_index
+        # If ranks are the same, compare the suit index
+        return self.suit_index < other.suit_index
+
+    def __gt__(self, other):
+        # If ranks are different, the higher rank index wins
+        if self.rank_index != other.rank_index:
+            return self.rank_index > other.rank_index
+        # If ranks are the same, compare the suit index
+        return self.suit_index > other.suit_index
+
+    # don't touch below this line
+
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH6: Polymorphism
+
+L13: Polymorphism Practice
+Back
+Next
+
+Polymorphism Practice
+Let's extend the Card logic we built to make a simple high-card low-card game.
+
+Assignment
+We will be building a simple game where we compare two cards and depending on the round (high or low) determine the winner.
+
+HighCardRound: The highest card wins
+LowCardRound: The lowest card wins
+Complete the HighCardRound class that inherits from Round:
+Create a constructor that takes two cards (card1 and card2) and stores them as instance variables.
+Implement the resolve_round() method that returns an integer:
+1 if card1 is higher than card2
+2 if card2 is higher than card1
+0 if the cards are equal
+Complete the LowCardRound class that inherits from Round:
+Create a constructor that takes two cards (card1 and card2) and stores them as instance variables.
+Implement a resolve_round() method that returns an integer:
+1 if card1 is lower than card2
+2 if card2 is lower than card1
+0 if the cards are equal
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Gormless Glutton, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+SUITS = ["Clubs", "Diamonds", "Hearts", "Spades"]
+RANKS = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+
+
+class Card:
+    def __init__(self, rank, suit):
+        self.rank = rank
+        self.suit = suit
+        self.rank_index = RANKS.index(rank)
+        self.suit_index = SUITS.index(suit)
+
+    def __eq__(self, other):
+        return (
+            self.rank_index == other.rank_index and self.suit_index == other.suit_index
+        )
+
+    def __lt__(self, other):
+        if self.rank_index == other.rank_index:
+            return self.suit_index < other.suit_index
+        return self.rank_index < other.rank_index
+
+    def __gt__(self, other):
+        if self.rank_index == other.rank_index:
+            return self.suit_index > other.suit_index
+        return self.rank_index > other.rank_index
+
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"
+
+
+class Round:
+    def resolve_round(self):
+        raise NotImplementedError("Subclasses must implement resolve_round()")
+
+
+# Don't touch above this line
+
+Submit
+
+Run
+
+Solution

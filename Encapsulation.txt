@@ -1,0 +1,795 @@
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH3: Encapsulation
+
+L1: Encapsulation
+Back
+Next
+
+Encapsulation
+Encapsulation is the practice of hiding complexity inside a "black box" so that it's easier to focus on the problem at hand.
+
+
+
+The simplest example of encapsulation is a function. The caller of a function doesn't need to worry too much about what happens inside, they just need to understand the inputs and outputs.
+
+# who even knows how this function works???
+# I sure don't, I just call it and assume
+# it calculates the acceleration correctly
+acceleration = calc_acceleration(initial_speed, final_speed, time)
+
+To use the calc_acceleration function, we don't need to think about each line of code inside the function definition. We just need to know that if we give it the inputs:
+
+initial_speed
+final_speed
+time
+It will produce the correct acceleration as an output.
+
+Public and Private
+By default, all properties and methods in a class are public. That means that you can access them with the . operator:
+
+wall.height = 10
+print(wall.height)
+# 10
+
+Private data members are a way to encapsulate logic and data within a class definition. To make a property or method private just prefix it with two underscores:
+
+class Wall:
+    def __init__(self, armor, magic_resistance):
+        self.__armor = armor
+        self.__magic_resistance = magic_resistance
+
+    def get_defense(self):
+        return self.__armor + self.__magic_resistance
+
+front_wall = Wall(10, 20)
+
+# This results in an error
+print(front_wall.__armor)
+
+# This works
+print(front_wall.get_defense())
+# 30
+
+We do this to make it easier to use our class. Now when another developer (or even ourselves) use the Wall class, they don't need to think about how armor and magic_resistance affect the defense of a Wall. In fact, we don't even allow them to access armor and magic_resistance directly by making them private with __.
+
+They simply call the public get_defense() method and know that the correct value will be returned.
+
+Note that you won't need to understand all the details behind this, but Python "private" members aren't truly private. Python just changes their names with "name mangling" to make outside access less straightforward.
+
+Assignment
+Complete the Wizard class's constructor.
+
+Set 2 private properties (be sure to include the private __ prefix):
+stamina
+intelligence
+Set 3 public properties:
+name: Use the value passed into the constructor
+health: 100x the value of "stamina"
+mana: 10x the value of "intelligence"
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Fearless Friday Deployer, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+class Wizard:
+    def __init__(self, name, stamina, intelligence):
+        self.name = name
+        # Private properties
+        self.__stamina = stamina
+        self.__intelligence = intelligence
+        
+        # Public properties calculated from private ones
+        self.health = stamina * 100
+        self.mana = intelligence * 10
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH3: Encapsulation
+
+L2: Not Security
+Back
+Next
+
+You're on assignment part 1/2 for this lesson.
+
+Not Security
+Encapsulation is all about making code easy to work with by "hiding" complicated code within a "black box". It makes it so that we don't have to worry about details of how a function or method works... we just use it.
+
+It's kinda like how the inner workings of your car's power steering are hidden from you. You don't need to be an expert on hydraulic systems to turn the wheel from side to side.
+
+Let me say this next part loud and clear:
+
+Encapsulation and the concepts of private and public members have NOTHING to do with security. This really confused me as a new developer. Just as the casing on your computer hides its inner workings but doesn't stop you from opening the case and looking inside, encapsulation doesn't stop anyone from knowing how your code works, it just puts it all in one easy to find place.
+
+Encapsulation is about organization, not security.
+
+Encapsulation is like storing folders in an unlocked filing cabinet. The cabinet doesn't stop anyone from peeking inside, but it does keep everything tidy and easy to find.
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Primeval 10x Developer, can assist without penalty!
+
+Ask Boots a question...
+
+Private properties are good for keeping passwords safe
+
+
+1
+
+True
+
+2
+
+False
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH3: Encapsulation
+
+L3: Not Security
+Back
+Next
+
+You're on assignment part 2/2 for this lesson.
+
+Not Security
+Encapsulation is all about making code easy to work with by "hiding" complicated code within a "black box". It makes it so that we don't have to worry about details of how a function or method works... we just use it.
+
+It's kinda like how the inner workings of your car's power steering are hidden from you. You don't need to be an expert on hydraulic systems to turn the wheel from side to side.
+
+Let me say this next part loud and clear:
+
+Encapsulation and the concepts of private and public members have NOTHING to do with security. This really confused me as a new developer. Just as the casing on your computer hides its inner workings but doesn't stop you from opening the case and looking inside, encapsulation doesn't stop anyone from knowing how your code works, it just puts it all in one easy to find place.
+
+Encapsulation is about organization, not security.
+
+Encapsulation is like storing folders in an unlocked filing cabinet. The cabinet doesn't stop anyone from peeking inside, but it does keep everything tidy and easy to find.
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Fearless Friday Deployer, can assist without penalty!
+
+Ask Boots a question...
+
+Encapsulation is a great way to make it easier for other developers to work with your code
+
+
+1
+
+True
+
+2
+
+False
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH3: Encapsulation
+
+L4: Wizard Duel
+Back
+Next
+
+Wizard Duel
+Let's have ourselves a Wizard's duel.
+
+Assignment
+Complete the following methods on the Wizard class:
+
+get_fireballed() should:
+Reduce the fireball_damage by the wizard's __stamina
+Reduce the wizard's health by the resulting fireball_damage
+drink_mana_potion() should:
+Increase the potion_mana by the wizard's __intelligence
+Increase the wizard's mana by the resulting potion_mana
+Both methods operate directly on the instance of the class (self). They take one input and return no values explicitly.
+
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Magnificent, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+class Wizard:
+    def __init__(self, name, stamina, intelligence):
+        self.name = name
+        self.__stamina = stamina
+        self.__intelligence = intelligence
+        self.mana = self.__intelligence * 10
+        self.health = self.__stamina * 100
+
+    # don't touch above this line
+
+    def get_fireballed(self, fireball_damage):
+        # Reduce incoming damage by the private stamina value
+        damage_taken = fireball_damage - self.__stamina
+        # Subtract the remaining damage from public health
+        self.health -= damage_taken
+
+    def drink_mana_potion(self, potion_mana):
+        # Boost the potion's effectiveness using private intelligence
+        total_mana_gain = potion_mana + self.__intelligence
+        # Add the boosted amount to public mana
+        self.mana += total_mana_gain
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH3: Encapsulation
+
+L5: Encapsulation in Python
+Back
+Next
+
+You're on assignment part 1/2 for this lesson.
+
+Encapsulation in Python
+Python is a very dynamic language, which makes it difficult for the interpreter to enforce some of the safeguards that languages like Go do. That's why encapsulation in Python is achieved mostly by convention rather than by force.
+
+Prefixing methods and properties with a double underscore is a strong suggestion to the users of your class that they shouldn't be touching that stuff. If a developer wants to break convention, there are ways to get around the double underscore rule.
+
+class Wall:
+    def __init__(self, height):
+        # the double underscore makes this a private property
+        # but it's not strictly enforced, there are hacks to get around it
+        self.__height = height
+
+    def get_height(self):
+        return self.__height
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Magnificent, can assist without penalty!
+
+Ask Boots a question...
+
+Python enforces encapsulation by fully preventing developers from touching private class members
+
+
+1
+
+True
+
+2
+
+False
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH3: Encapsulation
+
+L6: Encapsulation in Python
+Back
+Next
+
+You're on assignment part 2/2 for this lesson.
+
+Encapsulation in Python
+Python is a very dynamic language, which makes it difficult for the interpreter to enforce some of the safeguards that languages like Go do. That's why encapsulation in Python is achieved mostly by convention rather than by force.
+
+Prefixing methods and properties with a double underscore is a strong suggestion to the users of your class that they shouldn't be touching that stuff. If a developer wants to break convention, there are ways to get around the double underscore rule.
+
+class Wall:
+    def __init__(self, height):
+        # the double underscore makes this a private property
+        # but it's not strictly enforced, there are hacks to get around it
+        self.__height = height
+
+    def get_height(self):
+        return self.__height
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Lover of Salmon, can assist without penalty!
+
+Ask Boots a question...
+
+Other languages like Go have more strict ways to enforce encapsulation
+
+
+1
+
+True
+
+2
+
+False
+
+
+ExplainBoot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH3: Encapsulation
+
+L7: Wizard Duel
+Back
+Next
+
+Wizard Duel
+Let's give our wizards the ability to launch fireballs at each other.
+
+Assignment
+Complete the cast_fireball method:
+If there isn't enough mana to cast a fireball (based on the fireball_cost argument), raise an Exception with the message ____ cannot cast fireball, where ____ is the wizard's name.
+If the wizard has enough mana, reduce their mana by the fireball_cost and call get_fireballed on the target wizard with the given fireball_damage.
+Complete the is_alive method. It should return True if the wizard's health is greater than 0 and False otherwise.
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the Magnificent, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+class Wizard:
+    def __init__(self, name, stamina, intelligence):
+        self.name = name
+        self.__stamina = stamina
+        self.__intelligence = intelligence
+        self.mana = self.__intelligence * 10
+        self.health = self.__stamina * 100
+
+    def cast_fireball(self, target, fireball_cost, fireball_damage):
+        # 1. Check if the wizard has enough mana
+        if self.mana < fireball_cost:
+            raise Exception(f"{self.name} cannot cast fireball")
+        
+        # 2. Spend the mana
+        self.mana -= fireball_cost
+        
+        # 3. Apply the effect to the target wizard
+        target.get_fireballed(fireball_damage)
+
+    def is_alive(self):
+        # Return True if health > 0, otherwise False
+        return self.health > 0
+
+    def get_fireballed(self, fireball_damage):
+        fireball_damage -= self.__stamina
+        self.health -= fireball_damage
+
+    def drink_mana_potion(self, potion_mana):
+        potion_mana += self.__intelligence
+        self.mana += potion_mana
+
+Submit
+
+Run
+
+Solution
+Boot.dev
+Dashboard
+Courses
+Training
+Billing
+Community
+Leaderboard
+
+New NotificationsToggle notifications1
+gem bag
+Acolyte
+
+Level 35
+
+user avatarprofile role frame
+
+sharpshooter armor
+sharpshooter
+16
+
+streak embers
+
+daily streak
+Explain difficulty
+xp potions
+
+chest
+
+CH3: Encapsulation
+
+L8: Encapsulation Practice
+Back
+Next
+
+Encapsulation Practice
+Age of Dragons is a game about resource management and strategy. The game has a feature that allows players to manage their resources in a bank. The bank has a feature that allows players to deposit and withdraw funds.
+
+Assignment
+Complete the BankAccount class.
+
+Complete the constructor
+Set __account_number to account_number
+Set __balance to initial_balance
+Complete the public getters
+Complete the get_account_number method to get the value of the private variable __account_number and return it.
+Complete the get_balance method to get the value of the private variable __balance and return it.
+Complete the deposit method
+It should accept an amount as input and add it to the account balance.
+If the deposit amount isn't positive, it should raise a ValueError exception with the message cannot deposit zero or negative funds. Otherwise, it should add the amount to the balance.
+Complete the withdraw method
+It should accept an amount and check if there is enough money in the account for the withdrawal.
+If the withdrawal amount isn't positive, it should raise a ValueError exception with the message cannot withdraw zero or negative funds.
+Then, if there are not enough funds it should raise a ValueError exception with the message insufficient funds.
+Otherwise, it should deduct the amount from the balance.
+
+
+
+
+
+Boots
+Spellbook
+Lessons
+Boots
+Need help? I, Boots the King of the Keyboard, can assist without penalty!
+
+Ask Boots a question...
+
+main.py
+main_test.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+class BankAccount:
+    def __init__(self, account_number, initial_balance):
+        # Set private variables
+        self.__account_number = account_number
+        self.__balance = initial_balance
+
+    def get_account_number(self):
+        # Return the private account number
+        return self.__account_number
+
+    def get_balance(self):
+        # Return the private balance
+        return self.__balance
+
+    def deposit(self, amount):
+        # Validation: Check if amount is positive
+        if amount <= 0:
+            raise ValueError("cannot deposit zero or negative funds")
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        # Validation: Check if amount is positive
+        if amount <= 0:
+            raise ValueError("cannot withdraw zero or negative funds")
+        
+        # Validation: Check for sufficient funds
+        if amount > self.__balance:
+            raise ValueError("insufficient funds")
+            
+        self.__balance -= amount
+
+Submit
+
+Run
+
+Solution
