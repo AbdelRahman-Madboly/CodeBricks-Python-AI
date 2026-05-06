@@ -7,16 +7,16 @@ how Python works. Every topic includes a concept explanation, real-world example
 grounded in AI/ML contexts, and exercises that push past surface-level understanding.
 
 ---
- 
+
 ## Status
- 
+
 **Boot.dev chapters: 12 / 12 complete ✅**
-**Repo topics: 9 done · 9 remaining (2 essential before OOP, 7 optional)**
- 
+**Repo topics: 11 done · 7 remaining (optional, do alongside Phase 2)**
+
 ---
- 
+
 ## Boot.dev Alignment
- 
+
 | Boot.dev | Repo Topic | Status |
 |---------|------------|--------|
 | Ch 1: Introduction | `01_printing` | ✅ |
@@ -30,12 +30,11 @@ grounded in AI/ML contexts, and exercises that push past surface-level understan
 | Ch 12: Errors | `15_exceptions` | ✅ |
 | Ch 13: Practice | — | ✅ (absorbed into exercises) |
 | Ch 14: Quiz | — | ✅ (absorbed into test.py) |
- 
+
 ---
 
-
 ## All Topics
- 
+
 | # | Topic | Boot.dev | Priority | Status |
 |---|-------|----------|----------|--------|
 | 00 | [Debugging](./00_debugging/) | Ch 5 | Reference | ✅ Done |
@@ -44,8 +43,8 @@ grounded in AI/ML contexts, and exercises that push past surface-level understan
 | 03 | [Operators](./03_operators/) | Ch 6–7 | — | ✅ Done |
 | 04 | [Control Flow](./04_control_flow/) | Ch 7–8 | — | ✅ Done |
 | 05 | [Functions](./05_functions/) | Ch 3–4 | — | ✅ Done |
-| 06 | [Classes and Objects](./06_classes_intro/) | No Boot.dev | 🔴 Before OOP | 🔲 |
-| 07 | [Memory and Mutability](./07_memory_mutability/) | No Boot.dev | 🔴 Before OOP | 🔲 |
+| 06 | [Classes and Objects](./06_classes_intro/) | No Boot.dev | — | ✅ Done |
+| 07 | [Memory and Mutability](./07_memory_mutability/) | No Boot.dev | — | ✅ Done |
 | 08 | [Lists](./08_lists/) | Ch 9 | — | ✅ Done |
 | 09 | [Tuples](./09_tuples/) | No Boot.dev | 🟡 Anytime | 🔲 |
 | 10 | [Strings](./10_strings/) | No Boot.dev | 🟡 Anytime | 🔲 |
@@ -58,27 +57,20 @@ grounded in AI/ML contexts, and exercises that push past surface-level understan
 | 17 | [Recursion](./17_recursion/) | No Boot.dev | 🟢 Parallel | 🔲 |
 
 ### Priority Legend
-- 🔴 **Before OOP** — must complete before starting Phase 2
 - 🟡 **Anytime** — complete during or after Phase 2, does not block anything
-- 🟢 **Parallel** — can do alongside Phase 2, or after completing it
+- 🟢 **Parallel** — do alongside Phase 2, or batch after finishing it
 
 ---
 
-## Recommended Path to OOP
- 
-### Step 1 — Do now (1–2 days each)
-Complete `06_classes_intro` and `07_memory_mutability` before opening Phase 2.
-Phase 2 builds directly on classes. Memory and mutability explains why OOP
-uses references the way it does.
- 
-### Step 2 — Start Phase 2
-Open `02_oop/` and begin. You have enough foundation.
- 
-### Step 3 — Fill in remaining topics as you go
-Topics 09, 10, 11, 13, 14, 16, 17 don't block OOP.
+## Phase 1 is Complete — Start Phase 2
+
+All Boot.dev chapters are done. Classes and memory are done.
+You have everything you need to open `02_oop/`.
+
+The 7 remaining topics (09, 10, 11, 13, 14, 16, 17) don't block OOP.
 Do one per week alongside Phase 2, or batch them after finishing it.
-Use `SKILL_NOOBOOTDEV.md` to generate any of these in a new chat.
- 
+Use `SKILL_NOOBOOTDEV.md` to generate any of them in a new chat.
+
 ---
 
 ## Folder Structure (per topic)
@@ -123,20 +115,19 @@ The notes step is the easiest to skip and the most valuable not to skip.
 ---
 
 ## Phase 1 Completion Checklist
- 
-You are ready for Phase 2 when you can do all of these from memory:
- 
-- [ ] Write a function with type hints, a docstring, and a mutable default fix
-- [ ] Build a class with `__init__`, `__str__`, and two methods
-- [ ] Explain the difference between `is` and `==` with a concrete example
-- [ ] Explain shallow vs deep copy and show when each is needed
-- [ ] Write a list comprehension with a filter condition
-- [ ] Count item frequencies in a list using a dict
-- [ ] Use a set to find items in one list but not another
-- [ ] Write a recursive function with a base case
-- [ ] Handle a missing file with `try/except FileNotFoundError`
-- [ ] Explain what a closure is and write one from scratch
-- [ ] Explain the difference between mutable and immutable types
+
+All of these should be answerable from memory before opening Phase 2:
+
+- [x] Write a function with type hints, a docstring, and a mutable default fix
+- [x] Build a class with `__init__`, `__str__`, and two methods
+- [x] Explain the difference between `is` and `==` with a concrete example
+- [x] Explain shallow vs deep copy and show when each is needed
+- [x] Write a list comprehension with a filter condition
+- [x] Count item frequencies in a list using a dict
+- [x] Use a set to find items in one list but not another
+- [x] Handle a missing key with `.get()` and a missing file with `try/except`
+- [x] Explain the aliasing bug and fix it with `.copy()` or `deepcopy()`
+- [x] Explain the difference between mutable and immutable types
 
 ---
 

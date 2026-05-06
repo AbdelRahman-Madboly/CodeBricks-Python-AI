@@ -13,16 +13,15 @@ to production-ready AI/ML engineering. Built around the principle that understan
 ```
 Phase 1 ──► Phase 2 ──► Phase 3 ──► Phase 4 ──► Phase 5 ──► Phase 6 ──► Phase 7 ──► Phase 8
 Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML       Projects
-3 weeks     2 weeks     1 week      1 week      1 week      3 weeks     4 weeks     2 weeks
-🔲 Active   🔲 Next
+✅ Active   🔲 Next
 ```
 
 ---
- 
-## Phase 1 — Python Fundamentals `🔲 Active — 9/18 done`
- 
+
+## Phase 1 — Python Fundamentals `✅ Active — 11/18 done · Phase 2 ready`
+
 > Build the mental model: how Python thinks, manages memory, and structures programs.
- 
+
 | # | Topic | Boot.dev | Status |
 |---|-------|----------|--------|
 | 00 | [Debugging](./01_basics/00_debugging/) | Ch 5 | ✅ |
@@ -31,8 +30,8 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 | 03 | [Operators](./01_basics/03_operators/) | Ch 6–7 | ✅ |
 | 04 | [Control Flow](./01_basics/04_control_flow/) | Ch 7–8 | ✅ |
 | 05 | [Functions](./01_basics/05_functions/) | Ch 3–4 | ✅ |
-| 06 | [Classes and Objects](./01_basics/06_classes_intro/) | — | 🔴 Next |
-| 07 | [Memory and Mutability](./01_basics/07_memory_mutability/) | — | 🔴 Next |
+| 06 | [Classes and Objects](./01_basics/06_classes_intro/) | — | ✅ |
+| 07 | [Memory and Mutability](./01_basics/07_memory_mutability/) | — | ✅ |
 | 08 | [Lists](./01_basics/08_lists/) | Ch 9 | ✅ |
 | 09 | [Tuples](./01_basics/09_tuples/) | — | 🟡 |
 | 10 | [Strings](./01_basics/10_strings/) | — | 🟡 |
@@ -43,12 +42,15 @@ Basics      OOP         Pythonic    Std Lib     Quality     Data Sci    AI/ML   
 | 15 | [Exceptions](./01_basics/15_exceptions/) | Ch 12 | ✅ |
 | 16 | [Advanced Functions](./01_basics/16_advanced_functions/) | — | 🟢 |
 | 17 | [Recursion](./01_basics/17_recursion/) | — | 🟢 |
- 
-**🔴 = must do before Phase 2 · 🟡 = do anytime · 🟢 = do in parallel with Phase 2**
- 
+
+**🟡 = do anytime · 🟢 = do in parallel with Phase 2**
+
+The 7 remaining topics don't block OOP. Complete them alongside Phase 2
+using `SKILL_NOOBOOTDEV.md` in a new chat.
+
 ---
 
-## Phase 2 — Object-Oriented Programming `🔲 Not started`
+## Phase 2 — Object-Oriented Programming `🔲 Next`
 
 > Learn to model real systems, not just write classes for the sake of it.
 
@@ -141,16 +143,16 @@ CodeBricks-Python-AI/
 ├── SKILL_NOOBOOTDEV.md   ← use for topics with no Boot.dev chapter
 ├── GIT_GUIDE.md
 │
-├── 01_basics/            ← 9 done, 9 remaining
-│   ├── README.md         ← phase overview with priority guide
+├── 01_basics/            ← 11 done, 7 remaining (none block Phase 2)
+│   ├── README.md
 │   ├── 00_debugging/  ✅
 │   ├── 01_printing/   ✅
 │   ├── 02_variables_data_types/  ✅
 │   ├── 03_operators/  ✅
 │   ├── 04_control_flow/  ✅
 │   ├── 05_functions/  ✅
-│   ├── 06_classes_intro/   🔴
-│   ├── 07_memory_mutability/ 🔴
+│   ├── 06_classes_intro/  ✅
+│   ├── 07_memory_mutability/  ✅
 │   ├── 08_lists/      ✅
 │   ├── 09_tuples/     🟡
 │   ├── 10_strings/    🟡
@@ -162,8 +164,7 @@ CodeBricks-Python-AI/
 │   ├── 16_advanced_functions/ 🟢
 │   └── 17_recursion/  🟢
 │
-│
-├── 02_oop/
+├── 02_oop/               ← start here next
 ├── 03_pythonic/
 ├── 04_standard_library/
 ├── 05_typing_quality/
